@@ -21,6 +21,7 @@ const Detail = () => {
   }, [id]);
   return (
     <div className="detail-card">
+      <p className="character-id">ID: {character?.id}</p>
       <img
         className="detail-img"
         src={character?.image}

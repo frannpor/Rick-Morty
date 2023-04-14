@@ -26,8 +26,8 @@ const Form = ({ login }) => {
   };
 
   return (
-    <div class="login-container">
-      <form class="login-form" onSubmit={HandleOnSubmit}>
+    <div className="login-container">
+      <form className="login-form" onSubmit={HandleOnSubmit}>
         <h2>Por favor inicia sesión</h2>
         <label htmlFor="email"></label>
         <input
@@ -49,7 +49,7 @@ const Form = ({ login }) => {
           onChange={HandleOnChange}
         />
         {errors.password && <span className="error">{errors.password}</span>}
-        <button class="nav-btn" disabled={Object.keys(errors).length > 0}>
+        <button className="nav-btn" disabled={Object.keys(errors).length > 0}>
           Enviar
         </button>
       </form>

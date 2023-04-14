@@ -35,7 +35,6 @@
     font-size: 1.7rem;
     font-family: sans-serif;
     font-weight: 600;
-    color: #333;
     text-align: center;
   }
   .detail-content p {
@@ -43,8 +42,17 @@
     font-size: 1.5rem;
     font-style: italic;
     font-weight: 600;
-    color: #333;
     text-align: center;
+    background-color: transparent;
+  }
+  .character-id {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 29.5em;
+    margin-right: 14em;
+    position: absolute;
+    background-color: transparent;
   }
   
   @media (max-width: 600px) {
