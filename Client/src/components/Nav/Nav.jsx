@@ -12,7 +12,7 @@ export default function Nav({ onSearch, onLogout }) {
         <NavLink className="NavLink" to="/about">
           <button className="nav-button">About</button>
         </NavLink>
-        <NavLink className="NavLink" to="/logout">
+        <NavLink className="NavLink" to="/">
           <button className="nav-button" onClick={onLogout}>
             Log out
           </button>

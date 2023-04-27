@@ -4,7 +4,7 @@ import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-function Card({id, name, origin, image, onClose, addFav, removeFav, myFavorites, gender,}) {
+function Card({ id, name, species, gender, image, onClose, addFav, removeFav, myFavorites, origin }) {
   const [isFav, setIsFav] = useState(false);
   const handleFavorite = () => {
     if (isFav) {
@@ -12,7 +12,7 @@ function Card({id, name, origin, image, onClose, addFav, removeFav, myFavorites,
       removeFav(id);
     } else {
       setIsFav(true);
-      addFav({ id, name, origin, image, gender });
+      addFav({id, name, species, gender, image, onClose, origin});
     }
   };
   useEffect(() => {
@@ -21,22 +21,22 @@ function Card({id, name, origin, image, onClose, addFav, removeFav, myFavorites,
         setIsFav(true);
       }
     });
-  }, [id, myFavorites]);
+  }, [myFavorites, id]);
 
   return (
     <div className="card">
       <div className="card-container">
         <img className="card-image" alt={name} src={image} />
-        <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
+        <button className="fav-button" onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
         <button className="close-button" onClick={() => onClose(id)}>
           X
         </button>
         <Link className="detail-link" to={`/detail/${id}`}>
           <div className="card-details">
             <h2>{name}</h2>
-            <p>Origen: {origin}</p>
+            <p>Origen:{origin}</p>
           </div>
-        </Link>|z
+        </Link>
       </div>
     </div>
   );

@@ -3,14 +3,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Detail.css";
 
-const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
-const API_KEY = "e0d387bbc5f6.3200c85b0191bb76efbb";
+const URL_BASE = "http://localhost:3001/rickandmorty/character";
 
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
   useEffect(() => {
-    axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
+    axios(`${URL_BASE}/${id}`).then(({ data }) => {
       if (data.name) {
         setCharacter(data);
       } else {
